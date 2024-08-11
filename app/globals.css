@@ -2,8 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 18px;
+  margin-left: 4px;
+  background-color: white;
+  animation: blink-caret 0.8s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: white;
+  }
+}
+
 @layer base {
   body {
     @apply font-primary bg-primary text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold;
+  }
+  .h3 {
+    @apply text-[24px] xl:text-[24px] leading-[1.1] font-semibold;
   }
 }
